@@ -24,7 +24,21 @@ var server = http.createServer(function(request, response){
   if(path === '/'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
-    response.write(`欢迎来到我的 Node.js 服务器`)
+    response.write(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>我的第一个 Node.js 服务器</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <h1>欢迎来到我的 Node.js 服务器</h1>
+    </body>
+    </html>`
+    )
     response.end()
   } else if(path === '/style.css'){
     response.statusCode = 200
